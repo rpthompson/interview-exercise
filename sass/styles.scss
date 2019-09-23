@@ -1,0 +1,259 @@
+// -------- BODY STYLES
+$bodyFont: "Nunito", sans-serif;
+$bodyFontSize: 16px;
+$lineHeight: 140%;
+$sectionPadding: 50px 30px;
+
+// -------- COLORS --------
+$red: #BC2433;
+$blue: #20468B;
+$black: #000000;
+$white: #ffffff;
+$white70: rgba(255,255,255,0.7);
+
+// -------- MEDIA QUERY VARS --------
+$breakLargest: 1200px;
+$breakLarger: 1024px;
+$breakLarge: 900px;
+$breakTablet: 768px;
+$breakSmall: 600px;
+$breakSmaller: 480px;
+$breakMobileSmallest: 320px;
+
+// -------- RESETS --------
+html {
+  box-sizing: border-box;
+  font-size: $bodyFontSize;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// -------- MOBILE FIRST --------
+
+body {
+  font-family: $bodyFont;
+  font-size: $bodyFontSize;
+  line-height: $lineHeight;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 140%;
+}
+h2 {
+  font-size: 1.5rem;
+  color: $blue;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;  
+}
+p {
+  margin-bottom: 15px;
+}
+
+// -------- ANIMATIONS --------
+
+.moveDownAnim {
+  -webkit-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  -moz-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  -o-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  -ms-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  animation: moveDown 0.6s ease-in-out 0.2s backwards;     
+} 
+@-webkit-keyframes moveDown{
+  0% { 
+    -webkit-transform: translateY(-40px); 
+    opacity: 0;
+  }
+  100% { 
+    -webkit-transform: translateY(0px);  
+    opacity: 1;
+  }
+} 
+.moveUpAnim {
+  -webkit-animation: moveUp 1s ease-in-out 0.7s backwards;
+  -moz-animation: moveUp 1s ease-in-out 0.7s backwards;
+  -o-animation: moveUp 1s ease-in-out 0.7s backwards;
+  -ms-animation: moveUp 1s ease-in-out 0.7s backwards;
+  animation: moveUp 1s ease-in-out 0.7s backwards;
+}
+
+@-webkit-keyframes moveUp{
+  0% { 
+    -webkit-transform: translateY(40px); 
+    opacity: 0;
+  }
+  100% { 
+    -webkit-transform: translateY(0px);  
+    opacity: 1;
+  }
+} 
+
+#nav {
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px;
+  .logoContainer {
+    img {
+      width: 100px;
+    }
+  }
+}
+
+section.header {
+  background: $white;
+  width: 100%;
+  position: relative;
+
+
+  .headerText {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+    background: $blue;
+  }
+
+  .heroContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+section.bodyText {
+  background: $white;
+  padding: $sectionPadding;
+  .response {
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    display: block;    
+  }
+}
+
+section.locationContainer{
+  background: $blue;
+  color: $white;
+  padding: $sectionPadding;
+
+  .locationInner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;  
+    justify-content: center; 
+  }
+
+  .locationText {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .mapContainer{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+      width: 100%;
+  }
+  .mapContainer iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+  }
+}
+
+button {
+  background: $red;
+  color: $white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin: 15px 0px;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+}
+
+section.rsvp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.footer {
+  color: $white;
+  background: $blue;
+  height: 50px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Media Queries per size as needed
+  @media screen and (min-width: $breakTablet) {
+
+    body {
+      font-size: 18px;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    .logoContainer {
+      img {
+        width: 200px;
+      }
+    }
+    section.locationContainer {
+      flex-wrap: nowrap;
+
+        .locationText {
+          flex: 50%;
+          text-align: left;
+          margin-bottom: 0;
+        }
+    } 
+    .mapContainer {
+      flex: 50%;
+    }
+    section.bodyText {
+      width: 80%;
+      margin: 0 auto;
+    }
+    section.locationContainer .locationInner {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: $breakLarge) {
+    section.bodyText {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+    section.locationContainer {
+      .locationInner {
+        max-width: 70%;
+      }
+      .mapContainer {
+        padding-bottom: 40%;
+      }
+    }
+  }

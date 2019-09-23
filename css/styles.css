@@ -1,0 +1,179 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  line-height: 140%; }
+
+h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 140%; }
+
+h2 {
+  font-size: 1.5rem;
+  color: #20468B;
+  margin-bottom: 1rem; }
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600; }
+
+p {
+  margin-bottom: 15px; }
+
+.moveDownAnim {
+  -webkit-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  -moz-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  -o-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  -ms-animation: moveDown 0.6s ease-in-out 0.2s backwards;
+  animation: moveDown 0.6s ease-in-out 0.2s backwards; }
+
+@-webkit-keyframes moveDown {
+  0% {
+    -webkit-transform: translateY(-40px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0px);
+    opacity: 1; } }
+
+.moveUpAnim {
+  -webkit-animation: moveUp 1s ease-in-out 0.7s backwards;
+  -moz-animation: moveUp 1s ease-in-out 0.7s backwards;
+  -o-animation: moveUp 1s ease-in-out 0.7s backwards;
+  -ms-animation: moveUp 1s ease-in-out 0.7s backwards;
+  animation: moveUp 1s ease-in-out 0.7s backwards; }
+
+@-webkit-keyframes moveUp {
+  0% {
+    -webkit-transform: translateY(40px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0px);
+    opacity: 1; } }
+
+#nav {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px; }
+  #nav .logoContainer img {
+    width: 100px; }
+
+section.header {
+  background: #ffffff;
+  width: 100%;
+  position: relative; }
+  section.header .headerText {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+    background: #20468B; }
+  section.header .heroContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px; }
+    section.header .heroContainer img {
+      width: 100%; }
+
+section.bodyText {
+  background: #ffffff;
+  padding: 50px 30px; }
+  section.bodyText .response {
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    display: block; }
+
+section.locationContainer {
+  background: #20468B;
+  color: #ffffff;
+  padding: 50px 30px; }
+  section.locationContainer .locationInner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
+  section.locationContainer .locationText {
+    margin-bottom: 30px;
+    text-align: center; }
+  section.locationContainer .mapContainer {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    width: 100%; }
+  section.locationContainer .mapContainer iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute; }
+
+button {
+  background: #BC2433;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin: 15px 0px;
+  display: block;
+  margin: 0 auto;
+  border: 0; }
+
+section.rsvp {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+section.footer {
+  color: #ffffff;
+  background: #20468B;
+  height: 50px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px; }
+  h1 {
+    font-size: 2.2rem; }
+  .logoContainer img {
+    width: 200px; }
+  section.locationContainer {
+    flex-wrap: nowrap; }
+    section.locationContainer .locationText {
+      flex: 50%;
+      text-align: left;
+      margin-bottom: 0; }
+  .mapContainer {
+    flex: 50%; }
+  section.bodyText {
+    width: 80%;
+    margin: 0 auto; }
+  section.locationContainer .locationInner {
+    max-width: 80%;
+    margin: 0 auto; } }
+
+@media screen and (min-width: 900px) {
+  section.bodyText {
+    max-width: 70%;
+    margin: 0 auto; }
+  section.locationContainer .locationInner {
+    max-width: 70%; }
+  section.locationContainer .mapContainer {
+    padding-bottom: 40%; } }
