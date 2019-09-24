@@ -74,8 +74,6 @@ section.header {
   background: #ffffff;
   width: 100%;
   position: relative; }
-  section.header * {
-    overflow: visible; }
   section.header .headerText {
     width: 100%;
     text-align: center;
