@@ -74,6 +74,8 @@ section.header {
   background: #ffffff;
   width: 100%;
   position: relative; }
+  section.header * {
+    overflow: visible; }
   section.header .headerText {
     width: 100%;
     text-align: center;
@@ -82,8 +84,7 @@ section.header {
   section.header .heroContainer {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 30px; }
+    margin: 0 auto; }
     section.header .heroContainer img {
       width: 100%; }
 
@@ -102,18 +103,23 @@ section.locationContainer {
   padding: 50px 30px; }
   section.locationContainer .locationInner {
     display: flex;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center; }
   section.locationContainer .locationText {
     margin-bottom: 30px;
-    text-align: center; }
+    text-align: center;
+    width: 35%;
+    flex: 1;
+    padding-left: 30px; }
   section.locationContainer .mapContainer {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
-    width: 100%; }
+    width: 65%;
+    flex: 1; }
   section.locationContainer .mapContainer iframe {
     left: 0;
     top: 0;
@@ -132,6 +138,8 @@ button {
   display: block;
   margin: 0 auto;
   border: 0; }
+  button:hover {
+    background: #a21f2c; }
 
 section.rsvp {
   display: flex;
@@ -147,33 +155,25 @@ section.footer {
   align-items: center;
   justify-content: center; }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   body {
     font-size: 18px; }
   h1 {
     font-size: 2.2rem; }
   .logoContainer img {
     width: 200px; }
-  section.locationContainer {
-    flex-wrap: nowrap; }
-    section.locationContainer .locationText {
-      flex: 50%;
-      text-align: left;
-      margin-bottom: 0; }
-  .mapContainer {
-    flex: 50%; }
+  section.locationContainer .locationText {
+    text-align: left;
+    margin-bottom: 0; }
   section.bodyText {
-    width: 80%;
+    width: 90%;
     margin: 0 auto; }
   section.locationContainer .locationInner {
-    max-width: 80%;
+    width: 90%;
     margin: 0 auto; } }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
   section.bodyText {
-    max-width: 70%;
     margin: 0 auto; }
-  section.locationContainer .locationInner {
-    max-width: 70%; }
   section.locationContainer .mapContainer {
     padding-bottom: 40%; } }

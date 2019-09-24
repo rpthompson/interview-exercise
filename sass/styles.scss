@@ -3,6 +3,8 @@ $bodyFont: "Nunito", sans-serif;
 $bodyFontSize: 16px;
 $lineHeight: 140%;
 $sectionPadding: 50px 30px;
+$navHeight: 8vh;
+$bodyHeight: 92vh;
 
 // -------- COLORS --------
 $red: #BC2433;
@@ -115,6 +117,9 @@ section.header {
   width: 100%;
   position: relative;
 
+  * {
+    overflow: visible;
+  }
 
   .headerText {
     width: 100%;
@@ -127,7 +132,6 @@ section.header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 30px;
     img {
       width: 100%;
     }
@@ -150,8 +154,10 @@ section.locationContainer{
   color: $white;
   padding: $sectionPadding;
 
+
   .locationInner {
     display: flex;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     align-items: center;  
     justify-content: center; 
@@ -160,6 +166,9 @@ section.locationContainer{
   .locationText {
     margin-bottom: 30px;
     text-align: center;
+    width: 35%;
+    flex: 1;
+    padding-left: 30px;
   }
 
   .mapContainer{
@@ -167,7 +176,8 @@ section.locationContainer{
       padding-bottom:56.25%;
       position:relative;
       height:0;
-      width: 100%;
+      width: 65%;
+      flex: 1;
   }
   .mapContainer iframe{
       left:0;
@@ -189,6 +199,10 @@ button {
   display: block;
   margin: 0 auto;
   border: 0;
+
+  &:hover {
+    background: darken($red, 6%);
+  }
 }
 
 section.rsvp {
@@ -208,7 +222,7 @@ section.footer {
 }
 
 // Media Queries per size as needed
-  @media screen and (min-width: $breakTablet) {
+  @media (min-width: $breakTablet) {
 
     body {
       font-size: 18px;
@@ -222,36 +236,30 @@ section.footer {
       }
     }
     section.locationContainer {
-      flex-wrap: nowrap;
 
         .locationText {
-          flex: 50%;
           text-align: left;
           margin-bottom: 0;
         }
+        .mapContainer {
+        }       
     } 
-    .mapContainer {
-      flex: 50%;
-    }
+
     section.bodyText {
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
     }
     section.locationContainer .locationInner {
-      max-width: 80%;
+      width: 90%;
       margin: 0 auto;
     }
   }
 
-  @media screen and (min-width: $breakLarge) {
+  @media (min-width: $breakLarge) {
     section.bodyText {
-      max-width: 70%;
       margin: 0 auto;
     }
-    section.locationContainer {
-      .locationInner {
-        max-width: 70%;
-      }
+    section.locationContainer { 
       .mapContainer {
         padding-bottom: 40%;
       }
